@@ -1,0 +1,103 @@
+<div class="home-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10 offset-lg-3 offset-md-3 offset-sm-2 offset-xs-1">
+                <div class="form-container">
+                    <h3 class="heading">We will be in touch with you to get your trail set up.</h3>
+                    <p class="info">Fill Out Form</p>
+                    <form [formGroup]="userGroup" (submit)="submitForm()">
+                        <div class="form-group line-space">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" formControlName="firstName"
+                                        placeholder="First Name *">
+                                    <div *ngIf="getFormControlInstance('firstName').invalid &&
+                                        (getFormControlInstance('firstName').dirty || getFormControlInstance('firstName').touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="getFormControlInstance('firstName').errors?.required">
+                                            First Name is required.
+                                        </div>
+                                        <div *ngIf="getFormControlInstance('firstName').errors?.pattern">
+                                            First Name should contain only alphabets and blank space.
+                                        </div>
+                                        <div
+                                            *ngIf="getFormControlInstance('firstName').errors?.minlength || getFormControlInstance('firstName').errors?.maxlength">
+                                            First Name must be between 3 and 30 characters long.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" formControlName="lastName"
+                                        placeholder="Last Name *">
+                                    <div *ngIf="getFormControlInstance('lastName').invalid &&
+                                        (getFormControlInstance('lastName').dirty || getFormControlInstance('lastName').touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="getFormControlInstance('lastName').errors?.required">
+                                            Last Name is required.
+                                        </div>
+                                        <div *ngIf="getFormControlInstance('lastName').errors?.pattern">
+                                            Last Name should contain only alphabets and blank space.
+                                        </div>
+                                        <div *ngIf="getFormControlInstance('lastName').errors?.maxlength">
+                                            Last Name should not be more than 30 characters long.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group line-space">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Work Email *"
+                                [email]="true">
+                            <div *ngIf="getFormControlInstance('email').invalid &&
+                                (getFormControlInstance('email').dirty || getFormControlInstance('email').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="getFormControlInstance('email').errors?.required">
+                                    Work Mail is required.
+                                </div>
+                                <div *ngIf="getFormControlInstance('email').errors?.pattern">
+                                    Work Mail is Invalid.
+                                </div>
+                                <div *ngIf="getFormControlInstance('email').errors?.maxlength">
+                                    Work Mail should not be more than 120 characters long.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group line-space">
+                            <input type="number" class="form-control" formControlName="monthlyAdvertisingBudget"
+                                placeholder="Monthly Advertising Budget *">
+                            <div *ngIf="getFormControlInstance('monthlyAdvertisingBudget').invalid &&
+                                (getFormControlInstance('monthlyAdvertisingBudget').dirty || getFormControlInstance('monthlyAdvertisingBudget').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="getFormControlInstance('monthlyAdvertisingBudget').errors?.required">
+                                    Monthly Advertising Budget is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group line-space">
+                            <select name="countryCode" formControlName="phoneNumberCcv" class="form-select tele-code">
+                                <option value="null">Select Phone Number CCV</option>
+                                <option data-countryCode="GB" value="44" Selected>UK (+44)</option>
+                                <option data-countryCode="US" value="1">USA (+1)</option>
+                                <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                                <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                                <option data-countryCode="AO" value="244">Angola (+244)</option>
+                                <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+                                <option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                                <option data-countryCode="IN" value="91">India (+91)</option>
+                            </select>
+                            <div *ngIf="(getFormControlInstance('phoneNumberCcv').invalid &&
+                                (getFormControlInstance('phoneNumberCcv').dirty || getFormControlInstance('phoneNumberCcv').touched))"
+                                class="alert alert-danger">
+                                Phone Number CCV is required.
+                            </div>
+                        </div>
+                        <div class="form-group line-space button-div d-grid gap-2">
+                            <button type="submit" class="btn btn-primary waves-effect submit-btn">GET FREE
+                                TRIAL</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.home-page {
+    margin-top: 3%;
+    
+    .form-container {
+        box-shadow: 0px 4px 20px #00000029;
+        background-color: #fbfbfb;
+        border-radius: 30px;
+        padding: 35px;
+
+        .heading {
+            text-align: center;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .line-space {
+            margin-top: 25px;
+        }
+
+        .button-div {
+            text-align: center;
+        }
+
+        .tele-code {
+            background-color: #ffffff;
+        }
+
+        .tele-code::-ms-expand {
+            display:contents;
+        }
+
+        .submit-btn {
+            background-color: #FF6E4E;
+            border: none;
+            box-shadow: 0px 4px 8px #00000029;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+}

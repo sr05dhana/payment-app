@@ -1,0 +1,22 @@
+<div *ngIf="url === '/'">
+  <button [routerLink]="['home']">Go to Home Page</button>
+  <table>
+    <tr>
+      <th>S.No</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Work Email</th>
+      <th>Monthly Advertising Budget</th>
+      <th>Phone Number CCv</th>
+    </tr>
+    <tr *ngFor="let user of userDetails; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.monthlyAdvertisingBudget }}</td>
+      <td>{{ user.phoneNumberCcv }}</td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>
